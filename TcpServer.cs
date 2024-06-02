@@ -40,8 +40,7 @@ internal sealed class TcpServer
 
         while (stream.Read(buffer, 0, buffer.Length) != 0)
         {
-            var bytesRead = stream.Read(buffer, 0, buffer.Length);
-            var message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+            var message = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
             Console.WriteLine(message);
         }
     }
