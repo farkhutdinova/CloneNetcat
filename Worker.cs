@@ -4,7 +4,7 @@ public class Worker(ILogger<Worker> logger) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        var server = new TcpServer();
+        var server = new ListeningServer();
         server.Start(stoppingToken);
 
         while (!stoppingToken.IsCancellationRequested)
